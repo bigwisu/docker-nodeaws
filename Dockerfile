@@ -1,4 +1,4 @@
-FROM node:8.9.4
+FROM node:8.11
 
 MAINTAINER Wisu Suntoyo <bigwisu@gmail.com>
 
@@ -13,5 +13,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update \
     && python get-pip.py \
     && pip install awscli \
     && rm -f /tmp/get-pip.py
+
+RUN apt-get install -y jq
 
 RUN mkdir ~/.aws
